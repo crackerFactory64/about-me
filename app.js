@@ -1,9 +1,15 @@
-const userName = prompt("Welcome visitor! What is your name?");
+let userName = "";
+
+while (!userName) {
+  userName = prompt("Welcome visitor! What is your name?");
+}
+
 alert(
   "Welcome, " +
     userName +
     "! Thank you for your interest in my web page, I hope you enjoy it."
 );
+
 let score = 0;
 let answerOne = "";
 let answerTwo = "";
