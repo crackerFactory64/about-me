@@ -11,6 +11,7 @@ alert(
 );
 
 let score = 0;
+
 let answerOne = "";
 let answerTwo = "";
 let answerThree = "";
@@ -18,9 +19,11 @@ let answerFour = "";
 let answerFive = "";
 
 function startQuiz() {
-  answerOne = prompt(
-    "True of false: The airfield at the village I live in played an important role in Battle of Britain."
-  ).toLowerCase();
+  while (answerOne !== "true" && answerOne !== "false") {
+    answerOne = prompt(
+      "True of false: The airfield at the village I live in played an important role in the Battle of Britain."
+    ).toLowerCase();
+  }
 
   if (answerOne === "true") {
     score = score + 1;
@@ -29,9 +32,11 @@ function startQuiz() {
     alert("Incorrect! That was true.");
   }
 
-  answerTwo = prompt(
-    "True of false: I attended the University of Cambridge."
-  ).toLowerCase();
+  while (answerTwo !== "true" && answerTwo !== "false") {
+    answerTwo = prompt(
+      "True of false: I attended the University of Cambridge."
+    ).toLowerCase();
+  }
 
   if (answerTwo === "false") {
     score = score + 1;
@@ -40,9 +45,11 @@ function startQuiz() {
     alert("Incorrect! That was false");
   }
 
-  answerThree = prompt(
-    "True of false: Die Hard is my favourite film."
-  ).toLowerCase();
+  while (answerThree !== "true" && answerThree !== "false") {
+    answerThree = prompt(
+      "True of false: Die Hard is my favourite film."
+    ).toLowerCase();
+  }
 
   if (answerThree === "false") {
     score = score + 1;
@@ -51,9 +58,11 @@ function startQuiz() {
     alert("Incorrect! That was false.");
   }
 
-  answerFour = prompt(
-    "True of false: I worked for popular high street chemist Boots."
-  ).toLowerCase();
+  while (answerFour !== "true" && answerFour !== "false") {
+    answerFour = prompt(
+      "True of false: I worked for popular high street chemist Boots."
+    ).toLowerCase();
+  }
 
   if (answerFour === "true") {
     score = score + 1;
@@ -62,9 +71,11 @@ function startQuiz() {
     alert("Incorrect! That was true.");
   }
 
-  answerFive = prompt(
-    "True of false: I like to ride a road bicycle."
-  ).toLowerCase();
+  while (answerFive !== "true" && answerFive !== "false") {
+    answerFive = prompt(
+      "True of false: I like to ride a road bicycle."
+    ).toLowerCase();
+  }
 
   if (answerFive === "true") {
     score = score + 1;
@@ -92,4 +103,13 @@ function startQuiz() {
     default:
       alert("You scored 0... :(");
   }
+
+  //resets the user's answers and score so they can play again
+
+  answerOne = "";
+  answerTwo = "";
+  answerThree = "";
+  answerFour = "";
+  answerFive = "";
+  score = 0;
 }
