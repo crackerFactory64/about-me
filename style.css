@@ -37,6 +37,13 @@ main {
   max-width: 20em;
 }
 
+hr {
+  border-color: #59cd90;
+  margin: 1em auto;
+  opacity: 0.8;
+  width: 70%;
+}
+
 .img {
   border: 5px solid #59cd90;
   display: block;
@@ -79,4 +86,15 @@ button {
   margin: 2em auto;
   padding: 1em;
   font-size: 1.2em;
+}
+
+footer {
+  background-color: #59cd90;
+  text-align: center;
+  padding: 1em;
+}
+
+footer > small {
+  font-size: 1rem;
+  font-weight: bold;
 }
