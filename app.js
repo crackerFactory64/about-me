@@ -96,11 +96,7 @@ function startQuiz() {
     } else if (answerSix > 0 && answerSix < 6) {
       numberGameChances--;
       answerSix = parseInt(
-        prompt(
-          "Too low! You have " +
-            numberGameChances +
-            " numberGameChances remaining."
-        )
+        prompt("Too low! You have " + numberGameChances + " chances remaining.")
       );
     } else if (answerSix > 6 && answerSix <= 10) {
       numberGameChances--;
@@ -156,10 +152,18 @@ function startQuiz() {
     }
   }
 
-  alert("Potential correct answers were: ");
+  let filmList = "";
+
   for (let i = 0; i < films.length; i++) {
-    alert(films[i]);
+    if (i < 9) {
+      filmList += films[i] + ", ";
+    } else {
+      filmList += "or " + films[i];
+    }
   }
+
+  alert("Potential correct answers were: " + filmList);
+
   switch (score) {
     case 1:
       alert("You scored 1/7. You don't know me at all!");
