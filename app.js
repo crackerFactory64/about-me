@@ -1,6 +1,6 @@
 let userName = "";
 
-/*while (!userName) {
+while (!userName) {
   userName = prompt("Welcome visitor! What is your name?");
 }
 
@@ -9,7 +9,7 @@ alert(
     userName +
     "! Thank you for your interest in my web page, I hope you enjoy it."
 );
-*/
+
 let score = 0;
 
 let answerOne = "";
@@ -18,9 +18,10 @@ let answerThree = "";
 let answerFour = "";
 let answerFive = "";
 let answerSix = 0;
+let answerSeven = "";
 
 function startQuiz() {
-  /*  while (answerOne !== "true" && answerOne !== "false") {
+  while (answerOne !== "true" && answerOne !== "false") {
     answerOne = prompt(
       "True of false: The airfield at the village I live in played an important role in the Battle of Britain."
     ).toLowerCase();
@@ -84,24 +85,29 @@ function startQuiz() {
   } else {
     alert("Incorrect! That was true.");
   }
-*/
 
-  let chances = 4;
+  let numberGameChances = 4;
 
-  while (answerSix !== 6 && chances > 1) {
+  while (answerSix !== 6 && numberGameChances > 1) {
     if (answerSix === 0) {
       answerSix = parseInt(
         prompt("Guess my favourite number between 1 and 10!")
       );
     } else if (answerSix > 0 && answerSix < 6) {
-      chances--;
+      numberGameChances--;
       answerSix = parseInt(
-        prompt("Too low! You have " + chances + " chances remaining.")
+        prompt(
+          "Too low! You have " +
+            numberGameChances +
+            " numberGameChances remaining."
+        )
       );
     } else if (answerSix > 6 && answerSix <= 10) {
-      chances--;
+      numberGameChances--;
       answerSix = parseInt(
-        prompt("Too high! You have " + chances + " chances remaining.")
+        prompt(
+          "Too high! You have " + numberGameChances + " chances remaining."
+        )
       );
     } else {
       answerSix = parseInt(
@@ -117,24 +123,64 @@ function startQuiz() {
     alert("Unlucky! It was 6.");
   }
 
+  const films = [
+    "Mulholland Drive",
+    "Fargo",
+    "Taxi Driver",
+    "Distant Voices, Still Lives",
+    "This is Spinal Tap",
+    "The Godfather",
+    "Blade Runner",
+    "Parasite",
+    "Under the Skin",
+    "Midsommar",
+  ];
+
+  let answerSeven = prompt("Name one of my favourite films.").toLowerCase();
+  let filmChances = 6;
+  let filmCorrect = false;
+
+  while (filmChances > 0 && !filmCorrect) {
+    for (let i = 0; i < films.length; i++) {
+      if (answerSeven === films[i].toLowerCase()) {
+        alert("Riiight!");
+        score++;
+        filmCorrect = true;
+      }
+    }
+    filmChances--;
+    if (!filmCorrect) {
+      answerSeven = prompt(
+        "Nope, not that one. You have " + filmChances + " changes remaining."
+      );
+    }
+  }
+
+  alert("Potential correct answers were: ");
+  for (let i = 0; i < films.length; i++) {
+    alert(films[i]);
+  }
   switch (score) {
     case 1:
-      alert("You scored 1/6. You don't know me at all!");
+      alert("You scored 1/7. You don't know me at all!");
       break;
     case 2:
-      alert("You scored 2/6. Better luck next time.");
+      alert("You scored 2/7. Better luck next time.");
       break;
     case 3:
-      alert("You scored 3/6. Good job.");
+      alert("You scored 3/7. Good job.");
       break;
     case 4:
-      alert("You scored 4/6. Nice one!");
+      alert("You scored 4/7. Nice one!");
       break;
     case 5:
-      alert("You scored 5/6. You know me better than some family members!");
+      alert("You scored 5/7. You know me better than some family members!");
       break;
     case 6:
-      alert("You scored 6/6. You know me better than Google!");
+      alert("You scored 6/7. You know me better than an old friend!");
+      break;
+    case 7:
+      alert("You scored 7/7. You know me better than Google!");
       break;
     default:
       alert("You scored 0... :(");
