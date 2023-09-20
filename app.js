@@ -198,5 +198,6 @@ function startQuiz() {
   answerFour = "";
   answerFive = "";
   answerSix = 0;
+  answerSeven = "";
   score = 0;
 }
