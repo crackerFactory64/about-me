@@ -119,50 +119,54 @@ function startQuiz() {
     alert("Unlucky! It was 6.");
   }
 
-  const films = [
-    "Mulholland Drive",
-    "Fargo",
-    "Taxi Driver",
-    "Distant Voices, Still Lives",
-    "This is Spinal Tap",
-    "The Godfather",
-    "Blade Runner",
-    "Parasite",
-    "Under the Skin",
-    "Midsommar",
-  ];
+  function filmQuestion() {
+    const films = [
+      "Mulholland Drive",
+      "Fargo",
+      "Taxi Driver",
+      "Distant Voices, Still Lives",
+      "This is Spinal Tap",
+      "The Godfather",
+      "Blade Runner",
+      "Parasite",
+      "Under the Skin",
+      "Midsommar",
+    ];
 
-  let answerSeven = prompt("Name one of my favourite films.").toLowerCase();
-  let filmChances = 6;
-  let filmCorrect = false;
+    let answerSeven = prompt("Name one of my favourite films.").toLowerCase();
+    let filmChances = 6;
+    let filmCorrect = false;
 
-  while (filmChances > 0 && !filmCorrect) {
-    for (let i = 0; i < films.length; i++) {
-      if (answerSeven === films[i].toLowerCase()) {
-        alert("Riiight!");
-        score++;
-        filmCorrect = true;
+    while (filmChances > 0 && !filmCorrect) {
+      for (let i = 0; i < films.length; i++) {
+        if (answerSeven === films[i].toLowerCase()) {
+          alert("Riiight!");
+          score++;
+          filmCorrect = true;
+        }
+      }
+      filmChances--;
+      if (!filmCorrect) {
+        answerSeven = prompt(
+          "Nope, not that one. You have " + filmChances + " changes remaining."
+        );
       }
     }
-    filmChances--;
-    if (!filmCorrect) {
-      answerSeven = prompt(
-        "Nope, not that one. You have " + filmChances + " changes remaining."
-      );
+
+    let filmList = "";
+
+    for (let i = 0; i < films.length; i++) {
+      if (i < 9) {
+        filmList += films[i] + ", ";
+      } else {
+        filmList += "or " + films[i];
+      }
     }
+
+    alert("Potential correct answers were: " + filmList);
   }
 
-  let filmList = "";
-
-  for (let i = 0; i < films.length; i++) {
-    if (i < 9) {
-      filmList += films[i] + ", ";
-    } else {
-      filmList += "or " + films[i];
-    }
-  }
-
-  alert("Potential correct answers were: " + filmList);
+  filmQuestion();
 
   switch (score) {
     case 1:
