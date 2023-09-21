@@ -10,3 +10,6 @@ This is lab work for the Tech Educators bootcamp.
 - added unordered list to education and experience section
 - added number guessing game
 - added film guessing game which checks an array for a correct answer
+
+Driver: Luke Reynolds
+Navigator: Lee Mander
