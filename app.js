@@ -21,103 +21,129 @@ let answerSix = 0;
 let answerSeven = "";
 
 function startQuiz() {
-  while (answerOne !== "true" && answerOne !== "false") {
-    answerOne = prompt(
-      "True of false: The airfield at the village I live in played an important role in the Battle of Britain."
-    ).toLowerCase();
-  }
+  function questionOne() {
+    while (answerOne !== "true" && answerOne !== "false") {
+      answerOne = prompt(
+        "True of false: The airfield at the village I live in played an important role in the Battle of Britain."
+      ).toLowerCase();
+    }
 
-  if (answerOne === "true") {
-    score = score + 1;
-    alert("Correct! That was true.");
-  } else {
-    alert("Incorrect! That was true.");
-  }
-
-  while (answerTwo !== "true" && answerTwo !== "false") {
-    answerTwo = prompt(
-      "True of false: I attended the University of Cambridge."
-    ).toLowerCase();
-  }
-
-  if (answerTwo === "false") {
-    score = score + 1;
-    alert("Correct! That was false.");
-  } else {
-    alert("Incorrect! That was false");
-  }
-
-  while (answerThree !== "true" && answerThree !== "false") {
-    answerThree = prompt(
-      "True of false: Die Hard is my favourite film."
-    ).toLowerCase();
-  }
-
-  if (answerThree === "false") {
-    score = score + 1;
-    alert("Correct! That was false.");
-  } else {
-    alert("Incorrect! That was false.");
-  }
-
-  while (answerFour !== "true" && answerFour !== "false") {
-    answerFour = prompt(
-      "True of false: I worked for popular high street chemist Boots."
-    ).toLowerCase();
-  }
-
-  if (answerFour === "true") {
-    score = score + 1;
-    alert("Correct! That was true.");
-  } else {
-    alert("Incorrect! That was true.");
-  }
-
-  while (answerFive !== "true" && answerFive !== "false") {
-    answerFive = prompt(
-      "True of false: I like to ride a road bicycle."
-    ).toLowerCase();
-  }
-
-  if (answerFive === "true") {
-    score = score + 1;
-    alert("Correct! That was true.");
-  } else {
-    alert("Incorrect! That was true.");
-  }
-
-  let numberGameChances = 4;
-
-  while (answerSix !== 6 && numberGameChances > 1) {
-    if (answerSix === 0) {
-      answerSix = parseInt(
-        prompt("Guess my favourite number between 1 and 10!")
-      );
-    } else if (answerSix > 0 && answerSix < 6) {
-      numberGameChances--;
-      answerSix = parseInt(
-        prompt("Too low! You have " + numberGameChances + " chances remaining.")
-      );
-    } else if (answerSix > 6 && answerSix <= 10) {
-      numberGameChances--;
-      answerSix = parseInt(
-        prompt(
-          "Too high! You have " + numberGameChances + " chances remaining."
-        )
-      );
+    if (answerOne === "true") {
+      score = score + 1;
+      alert("Correct! That was true.");
     } else {
-      answerSix = parseInt(
-        prompt("Please enter a whole number between 1 and 10.")
-      );
+      alert("Incorrect! That was true.");
     }
   }
 
-  if (answerSix === 6) {
-    alert("You got it!");
-    score = score + 1;
-  } else {
-    alert("Unlucky! It was 6.");
+  questionOne();
+
+  function questionTwo() {
+    while (answerTwo !== "true" && answerTwo !== "false") {
+      answerTwo = prompt(
+        "True of false: I attended the University of Cambridge."
+      ).toLowerCase();
+    }
+
+    if (answerTwo === "false") {
+      score = score + 1;
+      alert("Correct! That was false.");
+    } else {
+      alert("Incorrect! That was false");
+    }
   }
+
+  questionTwo();
+
+  function questionThree() {
+    while (answerThree !== "true" && answerThree !== "false") {
+      answerThree = prompt(
+        "True of false: Die Hard is my favourite film."
+      ).toLowerCase();
+    }
+
+    if (answerThree === "false") {
+      score = score + 1;
+      alert("Correct! That was false.");
+    } else {
+      alert("Incorrect! That was false.");
+    }
+  }
+
+  questionThree();
+
+  function questionFour() {
+    while (answerFour !== "true" && answerFour !== "false") {
+      answerFour = prompt(
+        "True of false: I worked for popular high street chemist Boots."
+      ).toLowerCase();
+    }
+
+    if (answerFour === "true") {
+      score = score + 1;
+      alert("Correct! That was true.");
+    } else {
+      alert("Incorrect! That was true.");
+    }
+  }
+
+  questionFour();
+
+  function questionFive() {
+    while (answerFive !== "true" && answerFive !== "false") {
+      answerFive = prompt(
+        "True of false: I like to ride a road bicycle."
+      ).toLowerCase();
+    }
+
+    if (answerFive === "true") {
+      score = score + 1;
+      alert("Correct! That was true.");
+    } else {
+      alert("Incorrect! That was true.");
+    }
+  }
+
+  questionFive();
+
+  function questionSix() {
+    let numberGameChances = 4;
+
+    while (answerSix !== 6 && numberGameChances > 1) {
+      if (answerSix === 0) {
+        answerSix = parseInt(
+          prompt("Guess my favourite number between 1 and 10!")
+        );
+      } else if (answerSix > 0 && answerSix < 6) {
+        numberGameChances--;
+        answerSix = parseInt(
+          prompt(
+            "Too low! You have " + numberGameChances + " chances remaining."
+          )
+        );
+      } else if (answerSix > 6 && answerSix <= 10) {
+        numberGameChances--;
+        answerSix = parseInt(
+          prompt(
+            "Too high! You have " + numberGameChances + " chances remaining."
+          )
+        );
+      } else {
+        answerSix = parseInt(
+          prompt("Please enter a whole number between 1 and 10.")
+        );
+      }
+    }
+
+    if (answerSix === 6) {
+      alert("You got it!");
+      score = score + 1;
+    } else {
+      alert("Unlucky! It was 6.");
+    }
+  }
+
+  questionSix();
 
   function filmQuestion() {
     const films = [
